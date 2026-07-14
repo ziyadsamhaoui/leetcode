@@ -1,0 +1,98 @@
+# update-readme.yml
+#
+# Automatically updates the statistics section of README.md whenever
+# solution files are added, modified, or removed.
+#
+# Triggers:
+#   - push:           Any push to the repository.
+#   - workflow_dispatch: Manual trigger from the Actions tab.
+#
+# The workflow runs the Python counting script and commits the updated
+# README only when the file actually changes, preventing infinite loops.
+
+name: Update README
+
+on:
+  # Run only when solution files change inside category directories.
+  # This prevents re-triggering when the bot commits the updated README.
+  push:
+    paths:
+      - "arrays/**"
+      - "strings/**"
+      - "hash-map/**"
+      - "two-pointers/**"
+      - "sliding-window/**"
+      - "stack/**"
+      - "queue/**"
+      - "linked-list/**"
+      - "binary-search/**"
+      - "trees/**"
+      - "graphs/**"
+      - "heap/**"
+      - "backtracking/**"
+      - "greedy/**"
+      - "dynamic-programming/**"
+      - "intervals/**"
+      - "bit-manipulation/**"
+      - "math/**"
+      - "misc/**"
+  # Allow manual triggering from the GitHub Actions UI.
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    name: Update README statistics
+    runs-on: ubuntu-latest
+
+    steps:
+      # ---------------------------------------------------------------
+      # Step 1: Check out the repository so we can read/write files.
+      # ---------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history so we can push later.
+          fetch-depth: 0
+
+      # ---------------------------------------------------------------
+      # Step 2: Set up Python 3.x (the script uses pathlib and typing).
+      # ---------------------------------------------------------------
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # ---------------------------------------------------------------
+      # Step 3: Run the update script, which scans all category folders
+      #         and rewrites the <!--START_STATS--> block in README.md.
+      # ---------------------------------------------------------------
+      - name: Run update_readme.py
+        run: python scripts/update_readme.py
+
+      # ---------------------------------------------------------------
+      # Step 4: Check whether README.md was modified by the script.
+      #         If not, skip the commit step entirely.
+      # ---------------------------------------------------------------
+      - name: Check for changes
+        id: git-check
+        run: |
+          if ! git diff --quiet README.md; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ---------------------------------------------------------------
+      # Step 5: Commit and push the updated README back to the branch
+      #         that triggered the workflow.  The commit message is
+      #         prefixed with [skip ci] to avoid re-triggering this
+      #         workflow (prevents infinite loops).
+      # ---------------------------------------------------------------
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "[skip ci] Update README statistics"
+          git push
