@@ -19,22 +19,22 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 0
+**Total Solved:** 4
 
-**Last Updated:** 2026-07-14
+**Last Updated:** 2026-09-25
 
 **Categories:** 19
 
 | Category | Solved |
 |----------|-------:|
-| Arrays | 0 |
+| Arrays | 1 |
 | Strings | 0 |
-| Hash Map | 0 |
+| Hash Map | 1 |
 | Two Pointers | 0 |
 | Sliding Window | 0 |
-| Stack | 0 |
+| Stack | 1 |
 | Queue | 0 |
-| Linked List | 0 |
+| Linked List | 1 |
 | Binary Search | 0 |
 | Trees | 0 |
 | Graphs | 0 |
