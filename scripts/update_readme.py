@@ -1,23 +1,6 @@
-"""
-update_readme.py
-
-Scans every category folder in the repository, counts solution files by
-extension, and rewrites the dynamic statistics section of README.md between
-the <!--START_STATS--> and <!--END_STATS--> markers.
-
-Usage:
-    python scripts/update_readme.py
-
-Run from the repository root.
-"""
-
 from pathlib import Path
 from datetime import date
 from typing import Dict, List, Tuple
-
-# ---------------------------------------------------------------------------
-# Constants
-# ---------------------------------------------------------------------------
 
 REPO_ROOT: Path = Path(__file__).resolve().parent.parent
 
@@ -72,10 +55,7 @@ IGNORED_NAMES: Tuple[str, ...] = (
 START_MARKER: str = "<!--START_STATS-->"
 END_MARKER: str = "<!--END_STATS-->"
 
-
-# ---------------------------------------------------------------------------
 # Helpers
-# ---------------------------------------------------------------------------
 
 def _is_solution_file(path: Path) -> bool:
     """Return True if *path* is a regular file with a recognised solution extension."""
@@ -88,19 +68,6 @@ def _is_ignored(name: str) -> bool:
 
 
 def count_solutions(category: str) -> int:
-    """
-    Count solution files inside a single category directory.
-
-    Parameters
-    ----------
-    category : str
-        Name of the category folder (e.g. "arrays").
-
-    Returns
-    -------
-    int
-        Number of recognised solution files in that folder.
-    """
     category_path: Path = REPO_ROOT / category
 
     if not category_path.is_dir():
@@ -117,14 +84,6 @@ def count_solutions(category: str) -> int:
 
 
 def collect_stats() -> Dict[str, int]:
-    """
-    Count solutions across every category.
-
-    Returns
-    -------
-    Dict[str, int]
-        Mapping of category name -> number of solutions.
-    """
     stats: Dict[str, int] = {}
     for category in CATEGORIES:
         stats[category] = count_solutions(category)
@@ -132,20 +91,6 @@ def collect_stats() -> Dict[str, int]:
 
 
 def build_stats_section(stats: Dict[str, int]) -> str:
-    """
-    Build the markdown string that will replace the content between
-    the START_MARKER and END_MARKER.
-
-    Parameters
-    ----------
-    stats : Dict[str, int]
-        Category -> count mapping.
-
-    Returns
-    -------
-    str
-        Complete markdown block (including the markers).
-    """
     total: int = sum(stats.values())
     today_str: str = date.today().isoformat()
     num_categories: int = len(CATEGORIES)
@@ -173,19 +118,6 @@ def build_stats_section(stats: Dict[str, int]) -> str:
 
 
 def update_readme(stats: Dict[str, int]) -> bool:
-    """
-    Replace the dynamic section of README.md in-place.
-
-    Parameters
-    ----------
-    stats : Dict[str, int]
-        Category -> count mapping.
-
-    Returns
-    -------
-    bool
-        True if the file was modified, False otherwise.
-    """
     if not README_PATH.is_file():
         print(f"ERROR: {README_PATH} not found.")
         return False
@@ -211,9 +143,7 @@ def update_readme(stats: Dict[str, int]) -> bool:
     return True
 
 
-# ---------------------------------------------------------------------------
 # Entry point
-# ---------------------------------------------------------------------------
 
 def main() -> None:
     """Scan all categories and update the README statistics section."""

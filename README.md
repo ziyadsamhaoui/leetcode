@@ -6,8 +6,6 @@
 
 ---
 
-**Total Solved:** 0
-
 **Last Updated:** Automatically generated
 
 **Categories:** 19
@@ -52,6 +50,6 @@
 
 ---
 
-*Solutions are written in Python, Java, C++, C, C#, JavaScript, TypeScript, Go, Rust, Kotlin, and Swift.*
+*Solutions are written in Java.*
 
 </div>
