@@ -17,24 +17,24 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 4
+**Total Solved:** 9
 
-**Last Updated:** 2026-09-25
+**Last Updated:** 2026-09-27
 
 **Categories:** 19
 
 | Category | Solved |
 |----------|-------:|
-| Arrays | 1 |
-| Strings | 0 |
+| Arrays | 2 |
+| Strings | 1 |
 | Hash Map | 1 |
 | Two Pointers | 0 |
 | Sliding Window | 0 |
 | Stack | 1 |
 | Queue | 0 |
 | Linked List | 1 |
-| Binary Search | 0 |
-| Trees | 0 |
+| Binary Search | 1 |
+| Trees | 2 |
 | Graphs | 0 |
 | Heap | 0 |
 | Backtracking | 0 |
