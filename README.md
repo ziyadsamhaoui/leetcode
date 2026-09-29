@@ -17,7 +17,7 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 11
+**Total Solved:** 12
 
 **Last Updated:** 2026-09-29
 
@@ -31,7 +31,7 @@
 | Two Pointers | 0 |
 | Sliding Window | 0 |
 | Stack | 1 |
-| Queue | 0 |
+| Queue | 1 |
 | Linked List | 2 |
 | Binary Search | 1 |
 | Trees | 3 |
