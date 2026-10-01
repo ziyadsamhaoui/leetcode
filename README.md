@@ -17,7 +17,7 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 14
+**Total Solved:** 15
 
 **Last Updated:** 2026-10-01
 
@@ -39,7 +39,7 @@
 | Heap | 0 |
 | Backtracking | 0 |
 | Greedy | 0 |
-| Dynamic Programming | 0 |
+| Dynamic Programming | 1 |
 | Intervals | 0 |
 | Bit Manipulation | 0 |
 | Math | 0 |
