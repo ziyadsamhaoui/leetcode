@@ -17,7 +17,7 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 15
+**Total Solved:** 16
 
 **Last Updated:** 2026-10-01
 
@@ -27,7 +27,7 @@
 |----------|-------:|
 | Arrays | 2 |
 | Strings | 1 |
-| Hash Map | 2 |
+| Hash Map | 3 |
 | Two Pointers | 0 |
 | Sliding Window | 0 |
 | Stack | 1 |
