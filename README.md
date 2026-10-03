@@ -17,9 +17,9 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 18
+**Total Solved:** 19
 
-**Last Updated:** 2026-10-02
+**Last Updated:** 2026-10-03
 
 **Categories:** 19
 
@@ -41,7 +41,7 @@
 | Greedy | 0 |
 | Dynamic Programming | 1 |
 | Intervals | 0 |
-| Bit Manipulation | 0 |
+| Bit Manipulation | 1 |
 | Math | 0 |
 | Misc | 0 |
 <!--END_STATS-->
