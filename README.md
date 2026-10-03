@@ -17,7 +17,7 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 19
+**Total Solved:** 20
 
 **Last Updated:** 2026-10-03
 
@@ -34,7 +34,7 @@
 | Queue | 1 |
 | Linked List | 3 |
 | Binary Search | 2 |
-| Trees | 3 |
+| Trees | 4 |
 | Graphs | 0 |
 | Heap | 0 |
 | Backtracking | 0 |
