@@ -17,7 +17,7 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 20
+**Total Solved:** 21
 
 **Last Updated:** 2026-10-03
 
@@ -32,7 +32,7 @@
 | Sliding Window | 0 |
 | Stack | 1 |
 | Queue | 1 |
-| Linked List | 3 |
+| Linked List | 4 |
 | Binary Search | 2 |
 | Trees | 4 |
 | Graphs | 0 |
