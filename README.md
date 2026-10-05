@@ -17,16 +17,16 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 23
+**Total Solved:** 25
 
-**Last Updated:** 2026-10-04
+**Last Updated:** 2026-10-05
 
 **Categories:** 19
 
 | Category | Solved |
 |----------|-------:|
 | Arrays | 4 |
-| Strings | 1 |
+| Strings | 3 |
 | Hash Map | 3 |
 | Two Pointers | 0 |
 | Sliding Window | 0 |
