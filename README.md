@@ -17,15 +17,15 @@
 <!--START_STATS-->
 ## Statistics
 
-**Total Solved:** 26
+**Total Solved:** 27
 
-**Last Updated:** 2026-10-09
+**Last Updated:** 2026-10-10
 
 **Categories:** 19
 
 | Category | Solved |
 |----------|-------:|
-| Arrays | 5 |
+| Arrays | 6 |
 | Strings | 3 |
 | Hash Map | 3 |
 | Two Pointers | 0 |
